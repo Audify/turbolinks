@@ -97,6 +97,7 @@ fetchHistory = (cachedPage) ->
   triggerEvent EVENTS.RESTORE
 
 cacheCurrentPage = ->
+  return if !currentState
   currentStateUrl = new ComponentUrl currentState.url
 
   pageCache[currentStateUrl.absolute] =
